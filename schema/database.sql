@@ -1,0 +1,6 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE Todo(
+    ID UUID DEFAULT uuid_generate_v1(),
+    Title VARCHAR NOT NULL
+)

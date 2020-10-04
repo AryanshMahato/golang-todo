@@ -18,6 +18,8 @@ func main() {
 
 	server.GET("/health", controllers.HealthController)
 
+	server.GET("/", controllers.GetTodosController)
+
 	err := server.Run()
 	if err != nil {
 		log.Fatal("Cannot start server", err)
@@ -31,7 +33,7 @@ func connectDatabase() {
 		password = os.Getenv("password")
 	)
 
-	connStr := fmt.Sprintf("user=%v dbname=%v password=%v sslmode=disabled",
+	connStr := fmt.Sprintf("user=%v dbname=%v password=%v sslmode=disable",
 		user,
 		dbname,
 		password,
