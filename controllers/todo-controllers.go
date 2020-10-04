@@ -4,6 +4,7 @@ import (
 	"GoLang/model"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func HealthController(ctx *gin.Context) {
@@ -13,18 +14,58 @@ func HealthController(ctx *gin.Context) {
 }
 
 func GetTodosController(ctx *gin.Context) {
-	todos, err := model.DB.Query("SELECT * FROM TODO")
+	rows, err := model.DB.Query("SELECT * FROM TODO")
 	if err != nil {
-		ctx.JSON(500, gin.H{
+		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"message": "Cannot fetch todos",
-			"error":   err,
-			"todos":   todos,
+			"todos":   rows,
 		})
 		fmt.Println(err)
 		return
 	}
 
-	ctx.JSON(200, gin.H{
+	var todos []model.Todo
+
+	defer rows.Close()
+	for rows.Next() {
+		var id string
+		var title string
+		err = rows.Scan(&id, &title)
+		todos = append(todos, model.Todo{
+			ID:    id,
+			Title: title,
+		})
+	}
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{
 		"todos": todos,
+	})
+}
+
+func CreateTodoController(ctx *gin.Context) {
+	body := model.Todo{}
+	err := ctx.BindJSON(&body)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"message": "Cannot create todo",
+		})
+		return
+	}
+
+	row := model.DB.QueryRow("INSERT INTO TODO(Title) VALUES ($1) RETURNING ID", body.Title)
+
+	var todoId string
+	err = row.Scan(&todoId)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	ctx.JSON(http.StatusCreated, gin.H{
+		"message": "Todo Created",
+		"todoId":  todoId,
 	})
 }
