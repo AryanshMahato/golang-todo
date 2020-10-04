@@ -19,6 +19,7 @@ func main() {
 	server.GET("/health", controllers.HealthController)
 
 	server.GET("/", controllers.GetTodosController)
+	server.GET("/todo/:todoId", controllers.GetTodoController)
 	server.POST("/", controllers.CreateTodoController)
 
 	err := server.Run()

@@ -10,11 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="378c54ad-c03c-4f42-9910-c28e4d64b806" name="Default Changelist" comment="Get Todos API completed">
+    <list default="true" id="378c54ad-c03c-4f42-9910-c28e4d64b806" name="Default Changelist" comment="Create and Read API completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/todo-controllers.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/todo-controllers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/todo-model.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/todo-model.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601833362923</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Create and Read API completed">
+      <created>1601835967644</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601835967644</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +136,8 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Database connection added" />
     <MESSAGE value="Get Todos API completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get Todos API completed" />
+    <MESSAGE value="Create and Read API completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create and Read API completed" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -166,25 +173,25 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="642" y="204" width="535" height="710" key="EnvironmentVariablesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601831276495" />
-    <state width="1792" height="192" key="GridCell.Tab.0.bottom" timestamp="1601835901748">
+    <state width="1792" height="192" key="GridCell.Tab.0.bottom" timestamp="1601836557435">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="192" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601835901748" />
+    <state width="1792" height="192" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601836557435" />
     <state width="1792" height="192" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1601831744805" />
-    <state width="1792" height="192" key="GridCell.Tab.0.center" timestamp="1601835901747">
+    <state width="1792" height="192" key="GridCell.Tab.0.center" timestamp="1601836557433">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="192" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601835901747" />
+    <state width="1792" height="192" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601836557433" />
     <state width="1792" height="192" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1601831744804" />
-    <state width="1792" height="192" key="GridCell.Tab.0.left" timestamp="1601835901746">
+    <state width="1792" height="192" key="GridCell.Tab.0.left" timestamp="1601836557432">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="192" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601835901746" />
+    <state width="1792" height="192" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601836557432" />
     <state width="1792" height="192" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1601831744803" />
-    <state width="1792" height="192" key="GridCell.Tab.0.right" timestamp="1601835901748">
+    <state width="1792" height="192" key="GridCell.Tab.0.right" timestamp="1601836557434">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="192" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601835901748" />
+    <state width="1792" height="192" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601836557434" />
     <state width="1792" height="192" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1601831744804" />
     <state width="1792" height="151" key="GridCell.Tab.1.bottom" timestamp="1601831527632">
       <screen x="0" y="0" width="1792" height="1120" />
@@ -202,14 +209,18 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1792" height="151" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601831527632" />
+    <state x="642" y="186" key="RollbackChangesDialog" timestamp="1601836366815">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="642" y="186" key="RollbackChangesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601836366815" />
     <state x="397" y="199" key="SettingsEditor" timestamp="1601833055243">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1601833055243" />
-    <state width="600" height="440" key="javadoc.popup" timestamp="1601834977394">
+    <state width="600" height="440" key="javadoc.popup" timestamp="1601836369095">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="600" height="440" key="javadoc.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1601834977394" />
+    <state width="600" height="440" key="javadoc.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1601836369095" />
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1601834480591">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

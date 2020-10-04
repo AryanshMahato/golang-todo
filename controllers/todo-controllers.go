@@ -46,6 +46,32 @@ func GetTodosController(ctx *gin.Context) {
 	})
 }
 
+func GetTodoController(ctx *gin.Context) {
+	todoId, err := ctx.Params.Get("todoId")
+	if err == false {
+		ctx.JSON(400, gin.H{
+			"message": "todoId is not passed",
+		})
+		return
+	}
+
+	row := model.DB.QueryRow("SELECT * FROM Todo WHERE ID=$1", todoId)
+
+	var todo model.Todo
+	scanError := row.Scan(&todo.ID, &todo.Title)
+	if scanError != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"message": scanError.Error(),
+		})
+		fmt.Println(scanError)
+		return
+	}
+
+	ctx.JSON(200, gin.H{
+		"todo": todo,
+	})
+}
+
 func CreateTodoController(ctx *gin.Context) {
 	body := model.Todo{}
 	err := ctx.BindJSON(&body)
