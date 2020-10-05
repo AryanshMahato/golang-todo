@@ -112,3 +112,37 @@ func DeleteTodoController(ctx *gin.Context) {
 		"todoId":  todoId,
 	})
 }
+
+func UpdateTodoController(ctx *gin.Context) {
+	todoId, available := ctx.Params.Get("todoId")
+	if available != true {
+		ctx.JSON(400, gin.H{
+			"message": "todoId is not passed",
+		})
+		return
+	}
+
+	body := model.Todo{}
+	err := ctx.BindJSON(&body)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"message": "Cannot update todo",
+		})
+		return
+	}
+
+	row := model.DB.QueryRow("UPDATE Todo SET Title=$1 WHERE ID=$2 RETURNING ID", body.Title, todoId)
+
+	err = row.Scan(&todoId)
+	if err != nil {
+		ctx.JSON(http.StatusOK, gin.H{
+			"message": "todo update failed",
+			"error":   err.Error(),
+		},
+		)
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"message": "todo updated",
+	})
+}

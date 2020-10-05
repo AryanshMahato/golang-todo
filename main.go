@@ -21,6 +21,7 @@ func main() {
 	server.GET("/", controllers.GetTodosController)
 	server.GET("/todo/:todoId", controllers.GetTodoController)
 	server.DELETE("/todo/:todoId", controllers.DeleteTodoController)
+	server.PUT("/todo/:todoId", controllers.UpdateTodoController)
 	server.POST("/", controllers.CreateTodoController)
 
 	err := server.Run()
