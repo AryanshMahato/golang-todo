@@ -3,6 +3,7 @@ package main
 import (
 	"GoLang/controllers"
 	"GoLang/model"
+	"GoLang/validations"
 	"database/sql"
 	"fmt"
 	"github.com/gin-gonic/gin"
@@ -19,7 +20,7 @@ func main() {
 	server.GET("/health", controllers.HealthController)
 
 	server.GET("/", controllers.GetTodosController)
-	server.GET("/todo/:todoId", controllers.GetTodoController)
+	server.GET("/todo/:todoId", validations.GetTodoValidation, controllers.GetTodoController)
 	server.DELETE("/todo/:todoId", controllers.DeleteTodoController)
 	server.PUT("/todo/:todoId", controllers.UpdateTodoController)
 	server.POST("/", controllers.CreateTodoController)
