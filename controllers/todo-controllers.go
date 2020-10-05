@@ -95,3 +95,20 @@ func CreateTodoController(ctx *gin.Context) {
 		"todoId":  todoId,
 	})
 }
+
+func DeleteTodoController(ctx *gin.Context) {
+	todoId, available := ctx.Params.Get("todoId")
+	if available != true {
+		ctx.JSON(400, gin.H{
+			"message": "todoId is not passed",
+		})
+		return
+	}
+
+	_ = model.DB.QueryRow("DELETE FROM Todo WHERE ID=$1", todoId)
+
+	ctx.JSON(200, gin.H{
+		"message": "todo deleted",
+		"todoId":  todoId,
+	})
+}
