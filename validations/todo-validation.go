@@ -27,21 +27,21 @@ func GetTodoValidation(c *gin.Context) {
 	c.Next()
 }
 
-func CreateTododValidation(c *gin.Context) {
-	var todo createTodoModel
+func CreateTodoValidation(c *gin.Context) (CreateTodoModel, error) {
+	var todo CreateTodoModel
 	err := c.ShouldBindJSON(&todo)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"message": "Validation Error",
 			"error":   err.Error(),
 		})
-		c.Abort()
-		return
+		return CreateTodoModel{}, err
 	}
-	c.Next()
+
+	return todo, nil
 }
 
-type createTodoModel struct {
+type CreateTodoModel struct {
 	ID    string `json:"id"`
 	Title string `json:"title" binding:"min=3"`
 }

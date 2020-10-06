@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"GoLang/model"
+	"GoLang/validations"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -73,12 +74,8 @@ func GetTodoController(ctx *gin.Context) {
 }
 
 func CreateTodoController(ctx *gin.Context) {
-	body := model.Todo{}
-	err := ctx.BindJSON(&body)
+	body, err := validations.CreateTodoValidation(ctx)
 	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{
-			"message": "Cannot create todo",
-		})
 		return
 	}
 
