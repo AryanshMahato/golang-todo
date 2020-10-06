@@ -23,7 +23,7 @@ func main() {
 	server.GET("/todo/:todoId", validations.GetTodoValidation, controllers.GetTodoController)
 	server.DELETE("/todo/:todoId", controllers.DeleteTodoController)
 	server.PUT("/todo/:todoId", controllers.UpdateTodoController)
-	server.POST("/", controllers.CreateTodoController)
+	server.POST("/", validations.CreateTododValidation, controllers.CreateTodoController)
 
 	err := server.Run()
 	if err != nil {

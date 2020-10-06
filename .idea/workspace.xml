@@ -10,10 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="378c54ad-c03c-4f42-9910-c28e4d64b806" name="Default Changelist" comment="Update TODO added">
-      <change afterPath="$PROJECT_DIR$/validations/todo-validation.go" afterDir="false" />
+    <list default="true" id="378c54ad-c03c-4f42-9910-c28e4d64b806" name="Default Changelist" comment="Initial validation middleware added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validations/todo-validation.go" beforeDir="false" afterPath="$PROJECT_DIR$/validations/todo-validation.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunManager">
     <configuration name="go build GoLang" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -135,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601874377730</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Initial validation middleware added">
+      <created>1601879658146</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601879658146</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +168,8 @@
     <MESSAGE value="Get Todo API completed" />
     <MESSAGE value="Delete Todo Added" />
     <MESSAGE value="Update TODO added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update TODO added" />
+    <MESSAGE value="Initial validation middleware added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial validation middleware added" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -201,54 +209,54 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="642" y="204" width="535" height="710" key="EnvironmentVariablesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601831276495" />
-    <state width="1792" height="151" key="GridCell.Tab.0.bottom" timestamp="1601879619978">
+    <state width="1792" height="151" key="GridCell.Tab.0.bottom" timestamp="1601989003209">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="151" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601879619978" />
+    <state width="1792" height="151" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601989003209" />
     <state width="1792" height="192" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1601831744805" />
-    <state width="1792" height="151" key="GridCell.Tab.0.center" timestamp="1601879619977">
+    <state width="1792" height="151" key="GridCell.Tab.0.center" timestamp="1601989003207">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="151" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601879619977" />
+    <state width="1792" height="151" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601989003207" />
     <state width="1792" height="192" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1601831744804" />
-    <state width="1792" height="151" key="GridCell.Tab.0.left" timestamp="1601879619977">
+    <state width="1792" height="151" key="GridCell.Tab.0.left" timestamp="1601989003206">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="151" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601879619977" />
+    <state width="1792" height="151" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601989003206" />
     <state width="1792" height="192" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1601831744803" />
-    <state width="1792" height="151" key="GridCell.Tab.0.right" timestamp="1601879619978">
+    <state width="1792" height="151" key="GridCell.Tab.0.right" timestamp="1601989003208">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="151" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601879619978" />
+    <state width="1792" height="151" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601989003208" />
     <state width="1792" height="192" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1601831744804" />
-    <state width="1792" height="151" key="GridCell.Tab.1.bottom" timestamp="1601879619980">
+    <state width="1792" height="151" key="GridCell.Tab.1.bottom" timestamp="1601989003211">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="151" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601879619980" />
+    <state width="1792" height="151" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1601989003211" />
     <state width="1792" height="151" key="GridCell.Tab.1.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1601874271528" />
-    <state width="1792" height="151" key="GridCell.Tab.1.center" timestamp="1601879619979">
+    <state width="1792" height="151" key="GridCell.Tab.1.center" timestamp="1601989003210">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="151" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601879619979" />
+    <state width="1792" height="151" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1601989003210" />
     <state width="1792" height="151" key="GridCell.Tab.1.center/0.23.1792.1097@0.23.1792.1097" timestamp="1601874271527" />
-    <state width="1792" height="151" key="GridCell.Tab.1.left" timestamp="1601879619979">
+    <state width="1792" height="151" key="GridCell.Tab.1.left" timestamp="1601989003210">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="151" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601879619979" />
+    <state width="1792" height="151" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1601989003210" />
     <state width="1792" height="151" key="GridCell.Tab.1.left/0.23.1792.1097@0.23.1792.1097" timestamp="1601874271526" />
-    <state width="1792" height="151" key="GridCell.Tab.1.right" timestamp="1601879619979">
+    <state width="1792" height="151" key="GridCell.Tab.1.right" timestamp="1601989003211">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state width="1792" height="151" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601879619979" />
+    <state width="1792" height="151" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1601989003211" />
     <state width="1792" height="151" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1601874271527" />
     <state x="642" y="186" key="RollbackChangesDialog" timestamp="1601836366815">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="642" y="186" key="RollbackChangesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1601836366815" />
-    <state x="397" y="199" key="SettingsEditor" timestamp="1601833055243">
+    <state x="397" y="199" key="SettingsEditor" timestamp="1601989604232">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1601833055243" />
+    <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1601989604232" />
     <state x="496" y="296" key="Vcs.Push.Dialog.v2" timestamp="1601875431129">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -257,10 +265,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="600" height="440" key="javadoc.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1601836369095" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1601834480591">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1601989398648">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1601834480591" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1601989398648" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
